@@ -469,19 +469,23 @@ const navLinks = [
   overlayLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
+
+      // Close menu first
       document.body.classList.remove("menu-open");
       document.body.style.overflow = "";
+      document.body.style.overflowY = "auto";
 
       const href = link.getAttribute("href");
       if (href) {
         const target = document.querySelector(href);
         if (target) {
+          // Small delay to ensure menu is closed before scrolling
           setTimeout(() => {
             window.scrollTo({
               top: (target as HTMLElement).offsetTop - 100,
               behavior: "smooth",
             });
-          }, 400);
+          }, 300);
         }
       }
     });
