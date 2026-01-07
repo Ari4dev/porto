@@ -472,25 +472,24 @@ const navLinks = [
 
       const href = link.getAttribute("href");
 
-      // Close menu first
+      // Close menu and reset body styles
       document.body.classList.remove("menu-open");
-      document.body.style.overflow = "";
-      document.body.style.overflowY = "";
-      document.body.style.position = "";
-      document.body.style.width = "";
+      document.body.removeAttribute("style");
 
       if (href) {
         const target = document.querySelector(href);
         if (target) {
-          // Use requestAnimationFrame to ensure DOM updates before scrolling
-          requestAnimationFrame(() => {
-            setTimeout(() => {
-              window.scrollTo({
-                top: (target as HTMLElement).offsetTop - 100,
-                behavior: "smooth",
-              });
-            }, 100);
-          });
+          // Wait for menu close animation, then scroll
+          setTimeout(() => {
+            const targetTop =
+              (target as HTMLElement).getBoundingClientRect().top +
+              window.scrollY -
+              100;
+            window.scrollTo({
+              top: targetTop,
+              behavior: "smooth",
+            });
+          }, 350);
         }
       }
     });
