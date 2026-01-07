@@ -441,11 +441,28 @@ const navLinks = [
   });
 
   // Menu toggle
-  menuToggle?.addEventListener("click", () => {
+  menuToggle?.addEventListener("click", (e) => {
+    e.stopPropagation();
     document.body.classList.toggle("menu-open");
     document.body.style.overflow = document.body.classList.contains("menu-open")
       ? "hidden"
       : "";
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    const overlayMenu = document.getElementById("overlay-menu");
+    const isMenuOpen = document.body.classList.contains("menu-open");
+
+    if (
+      isMenuOpen &&
+      overlayMenu &&
+      !overlayMenu.contains(e.target as Node) &&
+      e.target !== menuToggle
+    ) {
+      document.body.classList.remove("menu-open");
+      document.body.style.overflow = "";
+    }
   });
 
   // Overlay link clicks
