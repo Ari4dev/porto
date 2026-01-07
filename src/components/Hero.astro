@@ -1,0 +1,592 @@
+---
+const socialLinks = [
+  { name: "Instagram", url: "https://ig.me/m/wahyu_arii29", icon: "instagram" },
+  { name: "WhatsApp", url: "https://wa.me/6285155452259", icon: "whatsapp" },
+  { name: "Email", url: "mailto:email@ari4dev.site", icon: "email" },
+];
+---
+
+<section id="home" class="hero">
+  <!-- Background Effects -->
+  <div class="hero-bg">
+    <div class="hero-gradient-orb hero-orb-1"></div>
+    <div class="hero-gradient-orb hero-orb-2"></div>
+    <div class="hero-grid-pattern"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <!-- Left Side: Text -->
+      <div class="hero-text">
+        <p class="hero-greeting">
+          <span class="greeting-wave">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M18.5 12.5c0 1-.3 1.9-.8 2.6m-3.5 3.7c-.4.2-.9.2-1.4.2-3.9 0-7-3.1-7-7v-2.8c0-.5.4-.9.9-.9h.1c.5 0 .9.4.9.9v2.8c0 2.8 2.3 5.1 5.1 5.1.5 0 1-.1 1.4-.2"
+              ></path>
+              <path d="M12 6V4a2 2 0 1 1 4 0v8"></path>
+              <path d="M8 10V8a2 2 0 0 1 4 0v2"></path>
+              <path d="M8 10a2 2 0 0 0-4 0v1a6 6 0 0 0 6 6h5"></path>
+              <path
+                d="M16 10a2 2 0 0 1 4 0v4a8 8 0 0 1-8 8h-2c-2.8 0-5.5-1.5-7-4"
+              ></path>
+            </svg>
+          </span> Hello, I'm
+        </p>
+
+        <h1 class="hero-name">
+          <span class="name-gradient">Wahyu Ari</span>
+        </h1>
+
+        <h2 class="hero-role">
+          <span class="role-text" id="typewriter"></span>
+          <span class="role-cursor">|</span>
+        </h2>
+
+        <p class="hero-description">
+          Self-taught developer passionate about crafting performant,
+          accessible, and visually stunning web experiences. Building for the
+          modern web since 2019.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary btn-shine btn-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              ></path>
+            </svg>
+            Got a project?
+          </a>
+          <a
+            href="/resume.html"
+            class="btn btn-secondary btn-lg"
+            target="_blank"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              ></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="12" y1="18" x2="12" y2="12"></line>
+              <polyline points="9 15 12 18 15 15"></polyline>
+            </svg>
+            My resume
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="hero-social">
+          {
+            socialLinks.map((social) => (
+              <a
+                href={social.url}
+                class="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.name}
+              >
+                {social.icon === "instagram" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                )}
+                {social.icon === "whatsapp" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                )}
+                {social.icon === "email" && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                )}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Right Side: Profile Image -->
+      <div class="hero-visual">
+        <div class="profile-wrapper" id="profileWrapper">
+          <div class="profile-border"></div>
+          <div class="profile-image-container">
+            <img
+              src="/images/profile.jpg"
+              alt="Wahyu Ari - Frontend Developer"
+              class="profile-image"
+              width="360"
+              height="360"
+            />
+          </div>
+          <!-- Decorative Elements -->
+          <div class="profile-decoration deco-1"></div>
+          <div class="profile-decoration deco-2"></div>
+          <div class="profile-decoration deco-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Background */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero-gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+  }
+
+  .hero-orb-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(
+      circle,
+      var(--color-accent) 0%,
+      transparent 70%
+    );
+    top: -200px;
+    right: -100px;
+  }
+
+  .hero-orb-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(
+      circle,
+      var(--color-accent-tertiary) 0%,
+      transparent 70%
+    );
+    bottom: -100px;
+    left: -100px;
+    opacity: 0.3;
+  }
+
+  .hero-grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Content */
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: var(--space-16);
+  }
+
+  /* Text Side */
+  .hero-text {
+    max-width: 600px;
+  }
+
+  .hero-greeting {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .greeting-wave {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-accent);
+    animation: wave 2s ease-in-out infinite;
+    transform-origin: 70% 70%;
+  }
+
+  .greeting-wave svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  @keyframes wave {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    10%,
+    30% {
+      transform: rotate(14deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50%,
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .hero-name {
+    font-size: var(--text-4xl);
+    font-weight: 800;
+    margin-bottom: var(--space-4);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards 0.1s;
+  }
+
+  .name-gradient {
+    color: var(--color-accent);
+  }
+
+  .hero-role {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-6);
+    min-height: 1.5em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards 0.2s;
+  }
+
+  .role-cursor {
+    color: var(--color-accent);
+    animation: blink 0.8s infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .hero-description {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--space-8);
+    max-width: 500px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards 0.3s;
+  }
+
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards 0.4s;
+  }
+
+  /* Social Links */
+  .hero-social {
+    display: flex;
+    gap: var(--space-4);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards 0.5s;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-base);
+  }
+
+  .social-link:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Visual Side */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .profile-wrapper {
+    position: relative;
+    width: 360px;
+    height: 360px;
+    transition: transform var(--transition-base);
+  }
+
+  .profile-border {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    animation: spin 8s linear infinite;
+    opacity: 0.8;
+  }
+
+  .profile-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--color-bg-card);
+    z-index: 1;
+  }
+
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Decorations */
+  .profile-decoration {
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .deco-1 {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    top: -20px;
+    right: 20px;
+    opacity: 0.6;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .deco-2 {
+    width: 40px;
+    height: 40px;
+    background: var(--color-accent-tertiary);
+    bottom: 40px;
+    left: -20px;
+    opacity: 0.5;
+    animation: float 3s ease-in-out infinite 0.5s;
+  }
+
+  .deco-3 {
+    width: 20px;
+    height: 20px;
+    background: var(--color-accent-secondary);
+    top: 50%;
+    right: -30px;
+    opacity: 0.7;
+    animation: float 3s ease-in-out infinite 1s;
+  }
+
+  /* Responsive */
+  @media (max-width: 1023px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: var(--space-10);
+    }
+
+    .hero-text {
+      max-width: 100%;
+      order: 2;
+    }
+
+    .hero-visual {
+      order: 1;
+    }
+
+    .hero-description {
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      justify-content: center;
+    }
+
+    .hero-social {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 100px;
+    }
+
+    .profile-wrapper {
+      width: 260px;
+      height: 260px;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .hero-cta .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  // Typewriter Effect
+  const typewriterElement = document.getElementById("typewriter");
+  const roles = [
+    "Frontend Developer",
+    "UI/UX Enthusiast",
+    "Problem Solver",
+    "Clean Code Advocate",
+  ];
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typingSpeed = 100;
+
+  function typeWriter() {
+    const currentRole = roles[roleIndex];
+
+    if (isDeleting) {
+      typewriterElement!.textContent = currentRole.substring(0, charIndex - 1);
+      charIndex--;
+      typingSpeed = 50;
+    } else {
+      typewriterElement!.textContent = currentRole.substring(0, charIndex + 1);
+      charIndex++;
+      typingSpeed = 100;
+    }
+
+    if (!isDeleting && charIndex === currentRole.length) {
+      isDeleting = true;
+      typingSpeed = 2000; // Pause at end
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      typingSpeed = 500; // Pause before new word
+    }
+
+    setTimeout(typeWriter, typingSpeed);
+  }
+
+  // Start typewriter after page load
+  setTimeout(typeWriter, 1000);
+
+  // 3D Tilt Effect on Profile
+  const profileWrapper = document.getElementById("profileWrapper");
+
+  profileWrapper?.addEventListener("mousemove", (e) => {
+    const rect = profileWrapper.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = (y - centerY) / 15;
+    const rotateY = (centerX - x) / 15;
+
+    profileWrapper.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  profileWrapper?.addEventListener("mouseleave", () => {
+    profileWrapper.style.transform =
+      "perspective(1000px) rotateX(0) rotateY(0)";
+  });
+</script>

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wahyu Ari - Resume</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --accent: #ff6b35;
+            --text: #0a0a0a;
+            --text-muted: #6b7280;
+            --border: #e5e7eb;
+            --bg-subtle: #f9fafb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.6;
+            color: var(--text);
+            background: #f0f0f0;
+            padding: 2rem;
+        }
+
+        .resume {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 0;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ========== HEADER ========== */
+        .header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: white;
+        }
+
+        .header-main h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+            white-space: nowrap;
+        }
+
+        .header-main .role {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .header-main .tagline {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 400px;
+            line-height: 1.5;
+        }
+
+        .header-contact {
+            font-size: 0.85rem;
+        }
+
+        .contact-item {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 0.75rem;
+            margin-bottom: 0.4rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: left;
+        }
+
+        .contact-item a,
+        .contact-item span:last-child {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        .contact-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-align: right;
+        }
+
+        /* ========== CONTENT ========== */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 0;
+        }
+
+        .main {
+            padding: 2rem 2.5rem;
+            border-right: 1px solid var(--border);
+        }
+
+        .sidebar {
+            padding: 2rem;
+            background: var(--bg-subtle);
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .section-title span {
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* ========== EXPERIENCE ========== */
+        .exp-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .exp-item::after {
+            content: '';
+            position: absolute;
+            left: 2.5px;
+            top: 1rem;
+            width: 1px;
+            height: calc(100% - 0.5rem);
+            background: var(--border);
+        }
+
+        .exp-item:last-child::after {
+            display: none;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.25rem;
+        }
+
+        .exp-role {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .exp-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .exp-company {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-list {
+            margin-left: 1rem;
+            color: #374151;
+            font-size: 0.9rem;
+        }
+
+        .exp-list li {
+            margin-bottom: 0.25rem;
+        }
+
+        /* ========== SIDEBAR SECTIONS ========== */
+        .sidebar .section-title {
+            font-size: 0.65rem;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar .section-title::after {
+            display: none;
+        }
+
+        /* Skills */
+        .skill-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .skill-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+        }
+
+        .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.7rem;
+            padding: 0.3rem 0.6rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-muted);
+        }
+
+        .skill-tag svg {
+            flex-shrink: 0;
+        }
+
+        /* Training */
+        .training-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .training-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .training-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.15rem;
+        }
+
+        .training-org {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .training-year {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--accent);
+        }
+
+        /* Background */
+        .background-text {
+            font-size: 0.85rem;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            padding: 1rem 2.5rem;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-accent {
+            color: var(--accent);
+        }
+
+        /* ========== MOBILE RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+
+            .resume {
+                max-width: 100%;
+                border-radius: 0;
+            }
+
+            .header {
+                display: block !important;
+                padding: 1.5rem;
+                text-align: left;
+            }
+
+            .header-main {
+                margin-bottom: 1rem;
+            }
+
+            .header-main h1 {
+                font-size: 1.75rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .role {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+
+            .tagline {
+                font-size: 0.75rem;
+                line-height: 1.6;
+                color: rgba(255, 255, 255, 0.6);
+                border-left: 2px solid var(--accent);
+                padding-left: 0.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .header-contact {
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
+            }
+
+            .contact-item {
+                display: flex !important;
+                grid-template-columns: unset !important;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.75rem;
+                margin-bottom: 0 !important;
+                background: none;
+                padding: 0;
+            }
+
+            .contact-item .contact-label {
+                font-size: 0.6rem;
+                min-width: 55px;
+                text-align: left;
+            }
+
+            .contact-item a,
+            .contact-item span:last-child {
+                font-size: 0.75rem !important;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .main {
+                padding: 1.5rem;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .sidebar {
+                padding: 1.5rem;
+            }
+
+            .exp-header {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .exp-date {
+                font-size: 0.75rem;
+            }
+
+            .skill-group {
+                margin-bottom: 1rem;
+            }
+
+            .skill-tags {
+                gap: 0.5rem;
+            }
+
+            .skill-tag {
+                font-size: 0.7rem;
+                padding: 0.25rem 0.5rem;
+            }
+
+            .footer {
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-main h1 {
+                font-size: 1.25rem;
+            }
+
+            .tagline {
+                font-size: 0.75rem;
+                line-height: 1.5;
+                max-width: 100%;
+            }
+
+            .main,
+            .sidebar {
+                padding: 1rem;
+            }
+
+            .section-title {
+                font-size: 0.65rem;
+            }
+
+            .exp-role {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ========== PRINT ========== */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .resume {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+
+        @page {
+            margin: 0;
+            size: A4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-main">
+                <h1>Wahyu Ari</h1>
+                <p class="role">Frontend Developer</p>
+                <p class="tagline">
+                    Self-taught developer passionate about crafting performant, accessible,
+                    and visually stunning web experiences. Building for the modern web since 2019.
+                </p>
+            </div>
+            <div class="header-contact">
+                <div class="contact-item">
+                    <span class="contact-label">email</span>
+                    <a href="mailto:email@ari4dev.site">email@ari4dev.site</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">web</span>
+                    <a href="https://ari4dev.site">ari4dev.site</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">location</span>
+                    <span>Boyolali, Indonesia</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Main Column -->
+            <div class="main">
+                <section class="section">
+                    <h2 class="section-title"><span>//</span> Experience</h2>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">Freelance Frontend Developer</span>
+                            <span class="exp-date">2023 - Present</span>
+                        </div>
+                        <p class="exp-company">Codewave Labs (Remote)</p>
+                        <ul class="exp-list">
+                            <li>Building responsive web applications using React and Next.js</li>
+                            <li>Developing e-commerce platforms with payment integration</li>
+                            <li>Creating admin dashboards with real-time data visualization</li>
+                            <li>Working remotely with international clients across timezones</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">Technical Intern</span>
+                            <span class="exp-date">2023 - 2025</span>
+                        </div>
+                        <p class="exp-company">島新精工株式会社, Japan</p>
+                        <ul class="exp-list">
+                            <li>Participated in overseas internship program in Japan</li>
+                            <li>Developed cross-cultural communication and work ethic</li>
+                            <li>Balanced full-time internship with remote freelance work</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">Self-taught Developer</span>
+                            <span class="exp-date">2018 - 2023</span>
+                        </div>
+                        <p class="exp-company">Personal Projects & Bootcamps</p>
+                        <ul class="exp-list">
+                            <li>Started learning web development at 16 years old</li>
+                            <li>Completed multiple online bootcamps and certifications</li>
+                            <li>Built portfolio of personal and open-source projects</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><span>//</span> Key Projects</h2>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">E-commerce Platform</span>
+                        </div>
+                        <p class="exp-company">Next.js, TypeScript, Tailwind CSS</p>
+                        <ul class="exp-list">
+                            <li>Full-stack e-commerce with cart, checkout, and payment integration</li>
+                            <li>Optimized for mobile-first experience with PWA support</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp-item">
+                        <div class="exp-header">
+                            <span class="exp-role">Admin Dashboard</span>
+                        </div>
+                        <p class="exp-company">React, Firebase, Chart.js</p>
+                        <ul class="exp-list">
+                            <li>Real-time analytics dashboard with data visualization</li>
+                            <li>Role-based authentication and user management</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <section class="section">
+                    <h2 class="section-title"><span>//</span> Background</h2>
+                    <p class="background-text">
+                        Started coding at <span class="highlight">16 years old</span> as a self-taught developer.
+                        Continuously learning through online resources, documentation, and hands-on projects.
+                        Committed to staying current with evolving web technologies.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><span>//</span> Skills</h2>
+
+                    <div class="skill-group">
+                        <p class="skill-label">Frontend</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#61DAFB">
+                                    <path
+                                        d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278z" />
+                                </svg>
+                                React
+                            </span>
+                            <span class="skill-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#000">
+                                    <path
+                                        d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.251 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.072-.092a.645.645 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163 11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748 0-.893-.012-1.088-.108-1.747-.652-4.506-3.859-8.292-8.208-9.695a12.597 12.597 0 0 0-2.499-.523A33.119 33.119 0 0 0 11.572 0zm4.069 7.217c.347 0 .408.005.486.047a.473.473 0 0 1 .237.277c.018.06.023 1.365.018 4.304l-.006 4.218-.744-1.14-.746-1.14v-3.066c0-1.982.01-3.097.023-3.15a.478.478 0 0 1 .233-.296c.096-.05.13-.054.5-.054z" />
+                                </svg>
+                                Next.js
+                            </span>
+                            <span class="skill-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#3178C6">
+                                    <path
+                                        d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z" />
+                                </svg>
+                                TypeScript
+                            </span>
+                            <span class="skill-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#F7DF1E">
+                                    <path
+                                        d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z" />
+                                </svg>
+                                JavaScript
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <p class="skill-label">Styling</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4">
+                                    <path
+                                        d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
+                                </svg>
+                                Tailwind
+                            </span>
+                            <span class="skill-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#1572B6">
+                                    <path
+                                        d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z" />
+                                </svg>
+                                CSS3
+                            </span>
+                            <span class="skill-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#CC6699">
+                                    <path
+                                        d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zM9.615 15.998c.175.645.156 1.248-.024 1.792l-.065.18c-.024.061-.052.12-.078.176-.14.29-.326.56-.555.81-.698.759-1.672 1.047-2.09.805-.45-.262-.226-1.335.584-2.19.871-.918 2.12-1.509 2.12-1.509v-.003l.108-.061zm9.911-10.861c-.542-2.133-4.077-2.834-7.422-1.645-1.989.707-4.144 1.818-5.693 3.267C4.568 8.48 4.275 9.98 4.396 10.607c.427 2.211 3.457 3.657 4.703 4.73v.006c-.367.18-3.056 1.529-3.686 2.925-.675 1.47.105 2.521.615 2.655 1.575.436 3.195-.36 4.065-1.649.84-1.261.766-2.881.404-3.676.496-.135 1.08-.195 1.83-.104 2.101.24 2.521 1.56 2.43 2.1-.09.539-.523.854-.674.944-.15.091-.195.12-.181.181.015.09.091.09.21.075.165-.03 1.096-.45 1.141-1.471.045-1.29-1.186-2.729-3.375-2.7-.9.016-1.471.091-1.875.256-.03-.045-.061-.075-.105-.105-1.35-1.455-3.855-2.475-3.75-4.41.03-.705.285-2.564 4.8-4.814 3.705-1.846 6.661-1.335 7.171-.21.7 1.59-1.56 4.545-5.34 4.965-1.44.165-2.191-.405-2.385-.615-.21-.225-.24-.24-.315-.195-.12.06-.045.24 0 .36.12.27.42.75 1.005 1.005 .51.21 1.77.33 3.285-.405 1.695-.825 3.015-3.105 2.625-5.04z" />
+                                </svg>
+                                Sass
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <p class="skill-label">Tools</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#F05032">
+                                    <path
+                                        d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187" />
+                                </svg>
+                                Git
+                            </span>
+                            <span class="skill-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#F24E1E">
+                                    <path
+                                        d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98z" />
+                                </svg>
+                                Figma
+                            </span>
+                            <span class="skill-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#007ACC">
+                                    <path
+                                        d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z" />
+                                </svg>
+                                VS Code
+                            </span>
+                            <span class="skill-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFCA28">
+                                    <path
+                                        d="M3.89 15.672L6.255.461A.542.542 0 0 1 7.27.288l2.543 4.771zm16.794 3.692l-2.25-14a.54.54 0 0 0-.919-.295L3.316 19.365l7.856 4.427a1.621 1.621 0 0 0 1.588 0z" />
+                                </svg>
+                                Firebase
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <p class="skill-label">Backend</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#3776AB">
+                                    <path
+                                        d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05z" />
+                                </svg>
+                                Python
+                            </span>
+                            <span class="skill-tag">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#4479A1">
+                                    <path
+                                        d="M12.001 0c-3.168 0-5.252.853-5.252.853v2.924s2.084-.854 5.252-.854 5.252.854 5.252.854V.853S15.169 0 12.001 0zM6.749 4.631v4.688c0 1.276 2.348 2.31 5.252 2.31s5.252-1.034 5.252-2.31V4.631c-1.196.574-3.124.977-5.252.977s-4.056-.403-5.252-.977zm0 6.084v4.688c0 1.276 2.348 2.31 5.252 2.31s5.252-1.034 5.252-2.31v-4.688c-1.196.574-3.124.977-5.252.977s-4.056-.403-5.252-.977zm0 6.084v4.688c0 1.276 2.348 2.31 5.252 2.31s5.252-1.034 5.252-2.31v-4.688c-1.196.574-3.124.977-5.252.977s-4.056-.403-5.252-.977z" />
+                                </svg>
+                                MySQL
+                            </span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><span>//</span> Training</h2>
+
+                    <div class="training-item">
+                        <p class="training-name">Frontend Developer Bootcamp</p>
+                        <p class="training-org">Dicoding Indonesia</p>
+                        <p class="training-year">2023</p>
+                    </div>
+
+                    <div class="training-item">
+                        <p class="training-name">React Developer Path</p>
+                        <p class="training-org">Progate / Codecademy</p>
+                        <p class="training-year">2022</p>
+                    </div>
+
+                    <div class="training-item">
+                        <p class="training-name">Web Development Fundamentals</p>
+                        <p class="training-org">freeCodeCamp</p>
+                        <p class="training-year">2019</p>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><span>//</span> Languages</h2>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Indonesian - Native</span>
+                        <span class="skill-tag">English - Professional</span>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <span class="footer-text">References available upon request</span>
+            <span class="footer-text"><span class="footer-accent">@</span>wahyuari</span>
+        </footer>
+    </div>
+</body>
+
+</html>

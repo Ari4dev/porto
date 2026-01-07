@@ -1,0 +1,143 @@
+/* ===================================
+   Portfolio v2.0 - Responsive Styles
+   =================================== */
+
+/* Tablet: 768px - 1023px */
+@media (min-width: 768px) {
+    :root {
+        --container-padding: var(--space-8);
+    }
+
+    .section {
+        padding: var(--space-20) 0;
+    }
+}
+
+/* Desktop: 1024px+ */
+@media (min-width: 1024px) {
+    :root {
+        --container-padding: var(--space-10);
+    }
+
+    .section {
+        padding: var(--space-24) 0;
+    }
+}
+
+/* Large Desktop: 1280px+ */
+@media (min-width: 1280px) {
+    :root {
+        --container-padding: var(--space-16);
+    }
+}
+
+/* Mobile-specific overrides */
+@media (max-width: 767px) {
+
+    /* Reduce spacing on mobile */
+    .section {
+        padding: var(--space-16) 0;
+    }
+
+    .section-header {
+        margin-bottom: var(--space-10);
+    }
+
+    /* Ensure buttons are touch-friendly */
+    .btn {
+        min-height: 44px;
+    }
+
+    /* Stack form elements */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Make text more readable on small screens */
+    body {
+        font-size: 15px;
+    }
+
+    /* Reduce hero visual on small screens */
+    .hero {
+        padding-top: 80px;
+        padding-bottom: var(--space-8);
+    }
+
+    /* Adjust card padding */
+    .card {
+        padding: var(--space-4);
+    }
+
+    /* Reduce gaps in grids */
+    .projects-grid,
+    .skills-grid {
+        gap: var(--space-4);
+    }
+}
+
+/* Hover states only on devices that support hover */
+@media (hover: hover) {
+    .project-card:hover {
+        transform: translateY(-8px);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+    }
+
+    .social-link:hover,
+    .social-icon:hover,
+    .social-link-lg:hover {
+        transform: translateY(-3px);
+    }
+}
+
+/* Touch devices - remove hover transforms */
+@media (hover: none) {
+
+    .project-card:hover,
+    .btn:hover,
+    .social-link:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --color-border: #ffffff;
+        --color-text-primary: #ffffff;
+        --color-text-secondary: #e5e5e5;
+    }
+
+    [data-theme="light"] {
+        --color-border: #000000;
+        --color-text-primary: #000000;
+        --color-text-secondary: #333333;
+    }
+}
+
+/* Print styles */
+@media print {
+
+    .header,
+    .back-to-top,
+    .scroll-indicator,
+    .hero-bg {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .section {
+        padding: 20px 0;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,155 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Skills from "../components/Skills.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Header />
+  <main id="main-content">
+    <Hero />
+    <About />
+    <Skills />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  import anime from "animejs/lib/anime.es.js";
+
+  // Wait for DOM to be fully loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    // Scroll-triggered animations using Intersection Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const animateOnScroll = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const section = entry.target;
+          section.classList.add("animated");
+
+          // About section animations
+          if (section.classList.contains("about")) {
+            anime({
+              targets: ".service-card",
+              opacity: [0, 1],
+              translateY: [20, 0],
+              delay: anime.stagger(100),
+              duration: 600,
+              easing: "easeOutExpo",
+            });
+          }
+
+          // Projects section animations
+          if (section.classList.contains("projects")) {
+            anime({
+              targets: ".project-card",
+              opacity: [0, 1],
+              translateY: [30, 0],
+              delay: anime.stagger(100),
+              duration: 800,
+              easing: "easeOutExpo",
+            });
+          }
+
+          // Contact section animations
+          if (section.classList.contains("contact")) {
+            anime({
+              targets: ".contact-form-wrapper, .contact-info",
+              opacity: [0, 1],
+              translateY: [30, 0],
+              delay: anime.stagger(150),
+              duration: 800,
+              easing: "easeOutExpo",
+            });
+          }
+
+          // Skills section animations
+          if (section.classList.contains("skills")) {
+            anime({
+              targets: ".skill-category",
+              opacity: [0, 1],
+              translateY: [30, 0],
+              delay: anime.stagger(150),
+              duration: 800,
+              easing: "easeOutExpo",
+            });
+            
+            anime({
+              targets: ".skill-item",
+              opacity: [0, 1],
+              translateX: [-20, 0],
+              delay: anime.stagger(100),
+              duration: 600,
+              easing: "easeOutExpo",
+            });
+          }
+
+          animateOnScroll.unobserve(section);
+        }
+      });
+    }, observerOptions);
+
+    // Observe sections for scroll animations
+    document
+      .querySelectorAll(".about, .skills, .contact")
+      .forEach((section) => {
+        animateOnScroll.observe(section);
+      });
+
+    // Counter animation for stats
+    const counterObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll(".counter");
+            counters.forEach((counter) => {
+              const target = parseInt(
+                counter.getAttribute("data-target") || "0",
+              );
+              anime({
+                targets: counter,
+                innerHTML: [0, target],
+                round: 1,
+                duration: 2000,
+                easing: "easeInOutExpo",
+              });
+            });
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
+
+    const statsWrapper = document.querySelector(".stats-wrapper");
+    if (statsWrapper) {
+      counterObserver.observe(statsWrapper);
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = (anchor as HTMLAnchorElement).getAttribute("href");
+        if (target) {
+          const element = document.querySelector(target);
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        }
+      });
+    });
+  });
+</script>

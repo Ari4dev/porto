@@ -1,0 +1,242 @@
+[
+  {
+    "id": "ecommerce-dashboard",
+    "name": "E-Commerce Admin Dashboard",
+    "title": "E-Commerce Dashboard",
+    "role": "Frontend Developer",
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Chart.js"
+    ],
+    "description": "Dashboard responsif untuk pemilik toko online mengelola produk, pesanan, dan insight penjualan secara real-time dengan visualisasi data interaktif.",
+    "problem": "Admin toko online membutuhkan interface terpusat untuk memonitor penjualan dan mengelola operasional sehari-hari.",
+    "image": "/images/projects/dashboard.png",
+    "githubUrl": "https://github.com/ColorlibHQ/AdminLTE",
+    "liveUrl": "https://adminlte.io/themes/v3/",
+    "features": [
+      "KPI Cards: Total Sales, Orders, Conversion Rate",
+      "Grafik penjualan interaktif (line/area chart)",
+      "Product CRUD dengan filter & search",
+      "Order management dengan status tracking",
+      "Dark theme & responsive layout"
+    ],
+    "highlights": [
+      "Real working dashboard demo",
+      "Chart.js data visualization",
+      "Responsive sidebar navigation",
+      "Modern UI components"
+    ]
+  },
+  {
+    "id": "weather-app",
+    "name": "SkyForecast",
+    "title": "Weather Forecast App",
+    "role": "Frontend Developer",
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "OpenWeather API"
+    ],
+    "description": "Aplikasi cuaca dengan UI bersih menampilkan kondisi saat ini dan prediksi 5 hari dengan animasi halus dan background dinamis.",
+    "problem": "Pengguna membutuhkan cara cepat untuk mengecek cuaca dengan visual yang intuitif dan menarik.",
+    "image": "/images/projects/weather.png",
+    "githubUrl": "https://github.com/webdevtrick/Simple-Weather-App",
+    "liveUrl": "https://weather-demo.vercel.app/",
+    "features": [
+      "Pencarian kota dengan auto-suggest",
+      "Card cuaca: suhu, feels-like, kelembapan, angin",
+      "Background gradient dinamis sesuai kondisi",
+      "Forecast 5 hari dengan detail",
+      "Toggle unit °C / °F"
+    ],
+    "highlights": [
+      "OpenWeather API integration",
+      "Dynamic weather backgrounds",
+      "Geolocation support",
+      "Mobile-first responsive design"
+    ]
+  },
+  {
+    "id": "task-board",
+    "name": "FlowBoard",
+    "title": "Task Management Board",
+    "role": "Frontend Developer",
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Drag & Drop API"
+    ],
+    "description": "Aplikasi kanban untuk mengelola tugas dengan drag-and-drop yang halus dan penyimpanan data lokal yang persistent.",
+    "problem": "Freelancer dan developer membutuhkan tool sederhana untuk mengorganisir task tanpa setup backend yang kompleks.",
+    "image": "/images/projects/taskboard.png",
+    "githubUrl": "https://github.com/nicehorse06/kanban-board-js",
+    "liveUrl": "https://kanban-board-js.netlify.app/",
+    "features": [
+      "Kolom: To Do, In Progress, Done",
+      "Card dengan label warna & due date",
+      "Drag & drop antar kolom",
+      "Filter berdasarkan label & search",
+      "Data persist di localStorage"
+    ],
+    "highlights": [
+      "Native Drag & Drop API",
+      "Smooth drag animations",
+      "LocalStorage persistence",
+      "Clean minimal UI"
+    ]
+  },
+  {
+    "id": "restaurant-landing",
+    "name": "Flavor Restaurant",
+    "title": "Restaurant Landing Page",
+    "role": "Frontend Developer",
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "AOS.js"
+    ],
+    "description": "Landing page elegan untuk restoran dengan fokus pada storytelling visual, animasi scroll modern, dan konversi reservasi.",
+    "problem": "Restoran membutuhkan website promo single-page yang premium dan mampu mengkonversi pengunjung menjadi reservasi.",
+    "image": "/images/projects/restaurant.png",
+    "githubUrl": "https://github.com/themewagon/flavor",
+    "liveUrl": "https://demo.themewagon.com/preview/flavor-free-bootstrap-4-restaurant-website-template",
+    "features": [
+      "Hero dengan parallax dan rating",
+      "Menu highlight dengan tabs kategori",
+      "Gallery grid dengan lightbox",
+      "About section dengan story",
+      "Reservation form dengan validasi"
+    ],
+    "highlights": [
+      "Scroll animations (AOS.js)",
+      "Parallax effects",
+      "Responsive image gallery",
+      "Mobile-first design"
+    ]
+  },
+  {
+    "id": "portfolio-generator",
+    "name": "Developer Portfolio",
+    "title": "Portfolio Template",
+    "role": "Frontend Developer",
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "GSAP"
+    ],
+    "description": "Template portfolio modern untuk developer dengan animasi smooth, dark theme, dan section yang comprehensive.",
+    "problem": "Developer junior membutuhkan template portfolio profesional yang siap pakai dan mudah dikustomisasi.",
+    "image": "/images/projects/portfolio.png",
+    "githubUrl": "https://github.com/themewagon/developer",
+    "liveUrl": "https://demo.themewagon.com/preview/developer-free-bootstrap-portfolio-template",
+    "features": [
+      "Hero dengan typed text animation",
+      "Skills section dengan progress bars",
+      "Projects gallery dengan filter",
+      "Contact form dengan validasi",
+      "Smooth scroll navigation"
+    ],
+    "highlights": [
+      "Modern dark theme design",
+      "GSAP animations",
+      "Fully responsive layout",
+      "Clean code structure"
+    ]
+  },
+  {
+    "id": "crypto-tracker",
+    "name": "CryptoWatch",
+    "title": "Crypto Price Tracker",
+    "role": "Frontend Developer",
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "CoinGecko API"
+    ],
+    "description": "Dashboard untuk melacak harga cryptocurrency real-time dengan grafik interaktif dan fitur watchlist.",
+    "problem": "Investor crypto membutuhkan dashboard sederhana untuk monitoring harga tanpa kompleksitas exchange apps.",
+    "image": "/images/projects/crypto.png",
+    "githubUrl": "https://github.com/florinpop17/app-ideas",
+    "liveUrl": "https://www.coingecko.com/",
+    "features": [
+      "Live price updates 50+ coins",
+      "Interactive price charts",
+      "Watchlist management",
+      "Market cap & volume stats",
+      "Price change indicators"
+    ],
+    "highlights": [
+      "CoinGecko API integration",
+      "Real-time data updates",
+      "Chart.js visualization",
+      "Responsive dashboard UI"
+    ]
+  },
+  {
+    "id": "expense-tracker",
+    "name": "SpendWise",
+    "title": "Expense Tracker App",
+    "role": "Frontend Developer",
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Chart.js"
+    ],
+    "description": "Aplikasi manajemen keuangan personal dengan kategori pengeluaran, budget tracking, dan visualisasi analytics.",
+    "problem": "Banyak orang kesulitan melacak pengeluaran harian tanpa tool yang simpel dan visual.",
+    "image": "/images/projects/expense.png",
+    "githubUrl": "https://github.com/bradtraversy/expense_tracker",
+    "liveUrl": "https://codepen.io/bradtraversy/pen/BaNWQme",
+    "features": [
+      "Quick entry untuk income/expense",
+      "Category tracking",
+      "Visual balance indicator",
+      "Transaction history",
+      "LocalStorage persistence"
+    ],
+    "highlights": [
+      "Clean minimal UI",
+      "Real-time balance updates",
+      "Color-coded transactions",
+      "Mobile responsive"
+    ]
+  },
+  {
+    "id": "pomodoro-timer",
+    "name": "FocusFlow",
+    "title": "Pomodoro Timer App",
+    "role": "Frontend Developer",
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Notifications API"
+    ],
+    "description": "Timer produktivitas Pomodoro dengan task management, session tracking, dan notifikasi browser.",
+    "problem": "Pekerja remote membutuhkan tool fokus yang simpel dengan reminder untuk break.",
+    "image": "/images/projects/pomodoro.png",
+    "githubUrl": "https://github.com/nicehorse06/pomodoro-clock",
+    "liveUrl": "https://pomofocus.io/",
+    "features": [
+      "Customizable timer (work/break)",
+      "Task list integration",
+      "Browser notifications",
+      "Session statistics",
+      "Theme colors per mode"
+    ],
+    "highlights": [
+      "Circular progress animation",
+      "Audio alerts",
+      "Distraction-free UI",
+      "Session history"
+    ]
+  }
+]
