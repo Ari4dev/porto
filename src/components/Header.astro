@@ -285,9 +285,9 @@ const navLinks = [
   }
 
   [data-theme="light"] .overlay-menu {
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    background: rgba(20, 24, 49, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
   }
 
   body.menu-open .overlay-menu {
@@ -358,7 +358,15 @@ const navLinks = [
   }
 
   [data-theme="light"] .overlay-footer {
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  [data-theme="light"] .overlay-menu .link-text {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  [data-theme="light"] .overlay-menu .overlay-link:hover .link-text {
+    color: var(--color-accent);
   }
 
   body.menu-open .overlay-footer {
